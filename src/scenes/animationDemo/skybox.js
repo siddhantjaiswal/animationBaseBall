@@ -106,7 +106,7 @@ class ThreeScene extends Component {
         objLoader.setMaterials(material)
         objLoader.load( batObj, (object) => {
             object.position.y -= 20;
-            this.scene.add(object);
+            // this.scene.add(object);
         });
     })
 

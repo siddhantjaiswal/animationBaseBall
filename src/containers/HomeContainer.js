@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Home from '../scenes/animationDemo/skybox';
+import Home from '../scenes/animationDemo';
 import getComments from '../actions/actionGetComments';
 
 const mapStateToProps = state => ({

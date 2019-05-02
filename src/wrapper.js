@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ErrorPage from './components/Error';
 const HomeContainer = lazy(() => import('./containers/HomeContainer'));
-
+const HomeContainer2 = lazy(() => import('./scenes/animationDemo/skybox'));
 
 class wrapper extends React.PureComponent {
   constructor(props) {
@@ -28,6 +28,7 @@ class wrapper extends React.PureComponent {
             <Suspense fallback={<>Loading...</>}>
                 <Switch>
                     <Route exact path="/" component={HomeContainer} />
+                    <Route exact path="/model" component={HomeContainer2} />
                 </Switch>
             </Suspense>
         </Router>
