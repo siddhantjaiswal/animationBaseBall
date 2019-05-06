@@ -8,6 +8,10 @@ class Home extends React.PureComponent {
     const { comments } = this.props;
     this.state = {
       comments,
+      loading: false,
+      location: false,
+      latitude: '',
+      longitude: ''
     };
   }
 
@@ -19,19 +23,46 @@ class Home extends React.PureComponent {
   }
 
   componentDidMount() {
-    const { getCommentsFunction } = this.props;
-    getCommentsFunction();
+    window.navigator.geolocation.getCurrentPosition(
+      successPosition => {
+        console.log('Position:----->>>>', successPosition);
+        this.setState({
+          location: true,
+          latitude: successPosition.coords.latitude,
+          longitude: successPosition.coords.longitude
+        })
+      },
+      errorPosition => {
+        console.log('error:---->>>>', errorPosition)
+      }
+    )
   }
 
   render() {
-    const { comments } = this.state;
-    const { commentsLoading } = this.props;
+    const { comments, loading, location, latitude, longitude } = this.state;
 
-    if (commentsLoading) {
+    if (loading) {
       return (<>Loading...</>);
     }
-
-    return (<CommentsList comments={comments} />);
+    if (location) {
+      return (
+        <div>
+          <div>
+            latitude:-> <br />
+            {longitude}
+          </div>
+          <div>
+            latitude:-> <br />
+            {latitude}
+          </div>
+        </div>);
+    }
+    return (
+      <div>
+        <div>
+          Allow Location to see this page.
+        </div>
+      </div>);
   }
 }
 

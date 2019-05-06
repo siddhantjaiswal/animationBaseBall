@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import ErrorPage from './components/Error';
 const HomeContainer = lazy(() => import('./containers/HomeContainer'));
 const HomeContainer2 = lazy(() => import('./scenes/animationDemo/skybox'));
+const HomeContainer3 = lazy(() => import('./scenes/Home'));
+
 
 class wrapper extends React.PureComponent {
   constructor(props) {
@@ -29,6 +31,9 @@ class wrapper extends React.PureComponent {
                 <Switch>
                     <Route exact path="/" component={HomeContainer} />
                     <Route exact path="/model" component={HomeContainer2} />
+                    <Route exact path="/location" component={HomeContainer3} />
+
+                    
                 </Switch>
             </Suspense>
         </Router>
