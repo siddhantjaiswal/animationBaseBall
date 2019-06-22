@@ -1,7 +1,7 @@
 {
   "name": "react-boilerplate",
   "version": "0.1.0",
-  "author": "Saharsh Goyal",
+  "author": "Siddhant Jaiswal",
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.4.0",
