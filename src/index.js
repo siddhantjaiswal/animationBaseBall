@@ -5,8 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store';
-import Wrapper from './wrapper'
-// const Wrapper = lazy(() => import('./wrapper'));
+import Wrapper from './wrapper';
 
 const store = configureStore();
 
